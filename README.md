@@ -93,3 +93,16 @@ sudo vi /etc/rc.local
 Before the line "exit 0"
 3.1 bash /home/pi/pictures/slideshow.sh
 ```
+
+```
+To enable auto login as user Root
+sudo vi /etc/inittab
+
+Find the line 1:2345:respawn:/sbin/getty --noclear 38400 tty1
+
+set to #1:2345:respawn:/sbin/getty --noclear 38400 tty1
+
+Append after this line: 1:2345:respawn:/bin/login -f root tty1 
+```
+
+Enjoy!
